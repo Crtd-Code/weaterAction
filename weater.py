@@ -1,2 +1,3 @@
-a=process.env.SECRET
+import os
+a=os.environ.get('SECRET', '')
 print(a)
