@@ -17,8 +17,7 @@ jobs:
   build:
     # 用来指定这个任务在什么操作系统上跑(服务器是GitHub免费提供的)
     runs-on: ubuntu-latest
-    steps:
-      
+    steps: 
     	# 首先copy git仓库到虚拟机上
       - name: Checkout
         uses: actions/checkout@v2
