@@ -1,17 +1,17 @@
-#!/usr/bin/python3
-#coding=utf-8
-
 import requests
 from bs4 import BeautifulSoup
 import random
 import os
 SKEY=os.environ.get('SKEY') #CoolPush酷推KEY
 def getlovewords():
+    headers={
+        'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.104 Mobile Safari/537.36'
+    }
     # 获取情话
     texts=[]
     for page in range(1,20):
         url = 'https://www.duanwenxue.com/huayu/tianyanmiyu/list_{}.html'.format(page)
-        response = requests.get(url)
+        response = requests.get(url,headers=headers)
         soup=BeautifulSoup(response.text,'lxml')
         lovewordslist=soup.find('div',class_='list-short-article').find_all('a',target='_blank')
         texts.extend([lovewordslist[i].text for i in range(len(lovewordslist))])
