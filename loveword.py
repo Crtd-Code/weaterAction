@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+#coding=utf-8
+
 import requests
 from bs4 import BeautifulSoup
 import random
@@ -23,6 +26,7 @@ def getIP():
             # 使用上面的IP代理请求百度，成功后状态码200
             baidu = requests.get("https://www.baidu.com/", proxies=proxies)
             if baidu.status_code == 200:
+                print(proxies)
                 ips.append(proxies)
         print("正在准备IP代理，请稍后。。。")
 def getlovewords():
