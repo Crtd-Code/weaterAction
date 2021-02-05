@@ -27,7 +27,7 @@ jobs:
           python-version: 3.8
         # 安装脚本所需的依赖
       - name: 'Install bs4 requests'
-        run: pip install bs4,requests
+        run: pip install bs4 requests
         # 运行脚本
       - name: 'Working'
         env:	#添加环境变量
