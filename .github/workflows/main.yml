@@ -26,5 +26,6 @@ jobs:
         run: pip install requests
       - name: 'Working'
         env:
-          SECRET: ${{ secrets.SECRET }}
+          SCKEY: ${{ secrets.SCKEY }}
+          SKEY: ${{ secrets.SKEY }}
         run: python ./weater.py
