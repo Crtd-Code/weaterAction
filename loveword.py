@@ -17,9 +17,9 @@ def getIP():
         seletor = etree.HTML(html)
         ip_list = seletor.xpath('/html/body/div/div[3]/div[2]/table/tbody/tr/td[1]/text()')
         for i in range(len(ip_list)):
-            ip = "https://" + ip_list[i]
+            ip = "http://" + ip_list[i]
             # 设置为字典格式
-            proxies = {"https": ip}
+            proxies = {"http": ip}
             # 使用上面的IP代理请求百度，成功后状态码200
             baidu = requests.get("https://www.baidu.com/", proxies=proxies)
             if baidu.status_code == 200:
