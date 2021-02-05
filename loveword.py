@@ -8,7 +8,7 @@ from lxml import etree
 SKEY=os.environ.get('SKEY') #CoolPush酷推KEY
 ips = []  # 装载有效 IP
 def getIP():
-    for i in range(1, 2):
+    for i in range(1, 5):
         headers = {
             "User-Agent": UserAgent().chrome  # chrome浏览器随机代理
         }
