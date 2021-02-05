@@ -1,7 +1,11 @@
+#!/usr/bin/python3
+#coding=utf-8
+
 import requests
 from bs4 import BeautifulSoup
 import random
 import os
+import time
 SKEY=os.environ.get('SKEY') #CoolPush酷推KEY
 def getlovewords():
     headers={
@@ -10,6 +14,7 @@ def getlovewords():
     # 获取情话
     texts=[]
     for page in range(1,20):
+        time.sleep(3)
         url = 'https://www.duanwenxue.com/huayu/tianyanmiyu/list_{}.html'.format(page)
         response = requests.get(url,headers=headers)
         soup=BeautifulSoup(response.text,'lxml')
