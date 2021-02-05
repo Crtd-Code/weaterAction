@@ -23,10 +23,7 @@ jobs:
       - name: 'Install requests'
         run: pip install requests
       - name: 'Working'
-        env:
-          SECRET: ${{ secrets.SECRET }}
         timeout-minutes: 350
         run: |
-          echo SECRET=$SECRET > .env
           python weater.py
           rm -f .env
