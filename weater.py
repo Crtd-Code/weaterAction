@@ -1,1 +1,2 @@
-print(SECRET)
+a=process.env.SECRET
+print(a)
