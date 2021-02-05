@@ -9,7 +9,7 @@ SKEY=os.environ.get('SKEY') #CoolPush酷推KEY
 def getlovewords():
     # 获取情话
     texts=[]
-    for page in range(1,89):
+    for page in range(1,20):
         url = 'https://www.duanwenxue.com/huayu/tianyanmiyu/list_{}.html'.format(page)
         response = requests.get(url)
         soup=BeautifulSoup(response.text,'lxml')
