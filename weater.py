@@ -7,7 +7,7 @@ import os
 SCKEY=os.environ.get('SCKEY','') ##Server酱推送KEY
 SKey=os.environ.get('SKey','') #CoolPush酷推KEY
 def get_iciba_everyday():
-    icbapi = 'http://open.iciba.com/dsapi/'  #下载.PY文件可见
+    icbapi = 'http://open.iciba.com/dsapi/'
     eed = requests.get(icbapi)
     bee = eed.json()  #返回的数据
     english = bee['content']
@@ -29,6 +29,7 @@ def CoolPush(info): #CoolPush酷推
     # cpurl = 'https://push.xuthus.cc/group/'+spkey   #推送到QQ群
     # cpurl = 'https://push.xuthus.cc/send/' + SKey  # 推送到个人QQ
     api='https://push.xuthus.cc/send/{}'.format(SKey)
+    print(api)
     print(info)
     requests.post(api, info.encode('utf-8'))
 def main():
@@ -62,7 +63,7 @@ def main():
                    "\n风力风向: " + fx + fl + "\n感冒指数: "  + ganmao + "\n温馨提示： " + tips + "\n更新时间: " + update_time + "\n✁-----------------------------------------\n" + get_iciba_everyday()
             # print(tdwt)
             # requests.post(cpurl,tdwt.encode('utf-8'))         #把天气数据转换成UTF-8格式，不然要报错。
-            ServerPush(tdwt)
+            # ServerPush(tdwt)
             CoolPush(tdwt)
     except Exception:
         error = '【出现错误】\n　　今日天气推送错误，请检查服务或网络状态！'
