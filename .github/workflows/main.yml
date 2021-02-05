@@ -25,4 +25,6 @@ jobs:
       - name: 'Install requests'
         run: pip install requests
       - name: 'Working'
+        env:
+          SECRET: ${{ secrets.SECRET }}
         run: python ./weater.py
