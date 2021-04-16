@@ -58,3 +58,4 @@ def CoolPush(info): #CoolPush酷推
 if __name__ == '__main__':
     info='晚安❤老婆\n'+getlovewords()
     CoolPush(info)
+    print(123)
